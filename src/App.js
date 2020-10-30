@@ -1,14 +1,40 @@
 import React, {Component} from 'react';
-import './App.css';
 import {BrowserRouter, Route, Link} from 'react-router-dom';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import dummyStore from '../src/dummy-store';
+import {getNotesForFolder, findNote, findFolder} from '../src/notes-helpers';
+import './App.css';
 
 
-function App() {
-  return (
-    <div>
-      <h2>header</h2>
-    </div>
-  );
+class App extends Component {
+  //initalize component 
+  state = {
+    notes: [],
+    folders: []
+  };
+
+  //component 
+  componentDidMount() {
+    setTimeout(() => this.setState(dummyStore), 600)
+  }
+
+  //client routes 
+  renderNavRoutes() {
+    const {routes, folders} = this.state;
+    
+  }
+
+
+  render() {
+    return (
+      <div>
+        <nav>Navigation here</nav>
+        <header>
+          <h1>Noteful Client </h1>
+        </header>
+      </div>
+    )
+  }
 }
 
 export default App;
